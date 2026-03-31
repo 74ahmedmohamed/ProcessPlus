@@ -1,332 +1,1285 @@
-<!DOCTYPE html><html class="dark" lang="en"><head>
-<meta charset="utf-8">
-<meta content="width=device-width, initial-scale=1.0" name="viewport">
-<title>Process+ | Get Your Free Strategy Playbook</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&amp;family=Manrope:wght@200;400;600;800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
-<script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            colors: {
-              "secondary": "#c3f400",
-              "surface": "#0e0e0e",
-              "tertiary-fixed-dim": "#78a1ff",
-              "on-primary-fixed": "#000000",
-              "surface-tint": "#ff8aa9",
-              "on-primary": "#62002b",
-              "on-tertiary-container": "#000000",
-              "surface-dim": "#0e0e0e",
-              "on-surface-variant": "#adaaaa",
-              "secondary-dim": "#b7e500",
-              "surface-container-high": "#20201f",
-              "surface-container": "#1a1a1a",
-              "on-surface": "#ffffff",
-              "surface-variant": "#262626",
-              "error-dim": "#d7383b",
-              "primary-container": "#ff719b",
-              "primary-dim": "#e4006c",
-              "surface-container-highest": "#262626",
-              "on-error-container": "#ffa8a3",
-              "tertiary": "#6f9bff",
-              "error": "#ff716c",
-              "primary-fixed-dim": "#ff528c",
-              "on-tertiary-fixed": "#00163e",
-              "tertiary-dim": "#006df8",
-              "outline-variant": "#484847",
-              "secondary-container": "#506600",
-              "primary-fixed": "#ff719b",
-              "error-container": "#9f0519",
-              "inverse-primary": "#bc0058",
-              "tertiary-container": "#006ffd",
-              "surface-bright": "#2c2c2c",
-              "outline": "#767575",
-              "on-secondary-container": "#efffbc",
-              "on-secondary": "#455900",
-              "on-secondary-fixed": "#354500",
-              "on-tertiary-fixed-variant": "#003581",
-              "on-secondary-fixed-variant": "#4e6300",
-              "on-tertiary": "#001d4e",
-              "secondary-fixed": "#c3f400",
-              "secondary-fixed-dim": "#b7e500",
-              "on-background": "#ffffff",
-              "tertiary-fixed": "#8eafff",
-              "inverse-on-surface": "#565555",
-              "surface-container-low": "#131313",
-              "surface-container-lowest": "#000000",
-              "on-primary-fixed-variant": "#5e0028",
-              "on-error": "#490006",
-              "primary": "#ff8aa9",
-              "on-primary-container": "#4c0020",
-              "inverse-surface": "#fcf9f8",
-              "background": "#0e0e0e"
-            },
-            fontFamily: {
-              "headline": ["Space Grotesk"],
-              "body": ["Manrope"],
-              "label": ["Manrope"]
-            },
-            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
-            animation: {
-              'pulse-slow': 'pulse 8s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-              'float': 'float 12s ease-in-out infinite',
-              'reveal': 'reveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards',
-            },
-            keyframes: {
-              float: {
-                '0%, 100%': { transform: 'translate(0, 0) scale(1)' },
-                '33%': { transform: 'translate(10%, -10%) scale(1.1)' },
-                '66%': { transform: 'translate(-5%, 15%) scale(0.9)' },
-              },
-              reveal: {
-                '0%': { opacity: '0', transform: 'translateY(40px) scale(0.95)' },
-                '100%': { opacity: '1', transform: 'translateY(0) scale(1)' },
-              }
-            }
-          },
-        },
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Process+ | Get Your Free Strategy Playbook</title>
+  <meta name="description" content="Stop guessing. Get the exact framework we use to scale high-ticket service providers to $100k/mo. Download your free Strategy Playbook — instant PDF access."/>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&family=Manrope:wght@200;400;600;800&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet"/>
+
+  <style>
+    /* ─── Reset & Base ─────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --primary:          #ff8aa9;
+      --primary-dim:      #e4006c;
+      --primary-container:#ff719b;
+      --secondary:        #c3f400;
+      --secondary-dim:    #b7e500;
+      --surface:          #0e0e0e;
+      --surface-low:      #131313;
+      --surface-container:#1a1a1a;
+      --surface-high:     #20201f;
+      --surface-highest:  #262626;
+      --on-surface:       #ffffff;
+      --on-surface-var:   #adaaaa;
+      --on-primary:       #62002b;
+      --on-secondary:     #455900;
+      --outline-var:      #484847;
+      --outline:          #767575;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background-color: var(--surface);
+      color: var(--on-surface);
+      font-family: 'Manrope', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    ::selection { background: var(--primary); color: var(--on-primary); }
+
+    /* ─── Typography Helpers ────────────────────────────── */
+    .font-headline { font-family: 'Space Grotesk', sans-serif; }
+
+    .label-micro {
+      font-family: 'Manrope', sans-serif;
+      font-size: 0.625rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    /* ─── Ambient Orbs ──────────────────────────────────── */
+    .orb-layer {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    .orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(110px);
+      opacity: 0.35;
+    }
+
+    .orb-1 {
+      width: 70vw; height: 70vw;
+      top: -20%; left: -15%;
+      background: var(--primary);
+      animation: floatOrb 14s ease-in-out infinite;
+    }
+    .orb-2 {
+      width: 55vw; height: 55vw;
+      top: 40%; right: -15%;
+      background: var(--secondary);
+      animation: floatOrb 18s ease-in-out infinite reverse;
+      animation-delay: -6s;
+    }
+    .orb-3 {
+      width: 45vw; height: 45vw;
+      bottom: -10%; left: 30%;
+      background: var(--primary);
+      opacity: 0.2;
+      animation: floatOrb 22s ease-in-out infinite;
+      animation-delay: -10s;
+    }
+
+    @keyframes floatOrb {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      33%       { transform: translate(8%, -8%) scale(1.08); }
+      66%       { transform: translate(-4%, 12%) scale(0.93); }
+    }
+
+    /* ─── Glass Card ────────────────────────────────────── */
+    .glass-card {
+      background: rgba(26, 26, 26, 0.5);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      transition: border-color 0.4s ease, box-shadow 0.4s ease;
+    }
+    .glass-card:hover {
+      border-color: rgba(255, 138, 169, 0.35);
+      box-shadow: 0 0 40px rgba(255, 138, 169, 0.08);
+    }
+
+    /* ─── Reveal Animations ─────────────────────────────── */
+    /* Default: all content visible. JS adds .js-loaded to body,
+       which opts elements into the animation system. */
+    .js-loaded .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+                  transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .js-loaded .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.45s; }
+
+    /* ─── Navbar ─────────────────────────────────────────── */
+    .navbar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(14,14,14,0.82);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    .navbar-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 1.25rem 2rem;
+    }
+    .logo {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.35rem;
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      text-transform: uppercase;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 2px;
+      text-decoration: none;
+    }
+    .logo span { color: var(--primary); }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
+      list-style: none;
+    }
+    @media (max-width: 768px) { .nav-links { display: none; } }
+
+    .nav-links a {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.875rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: rgba(255,255,255,0.65);
+      text-decoration: none;
+      transition: color 0.25s;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--primary); }
+    .nav-links a.active { border-bottom: 2px solid var(--primary); padding-bottom: 2px; }
+
+    /* ─── Pill Button ───────────────────────────────────── */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border: none;
+      cursor: pointer;
+      border-radius: 9999px;
+      transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1),
+                  box-shadow 0.3s ease,
+                  background 0.3s ease;
+      user-select: none;
+      text-decoration: none;
+    }
+    .btn:active { transform: scale(0.93) !important; }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-container) 100%);
+      color: var(--on-primary);
+      padding: 0.75rem 1.8rem;
+      font-size: 0.8rem;
+    }
+    .btn-primary:hover {
+      box-shadow: 0 0 28px rgba(255, 138, 169, 0.45);
+    }
+
+    .btn-secondary-lime {
+      background: var(--secondary);
+      color: var(--on-secondary);
+      padding: 1.1rem 2.5rem;
+      font-size: 1rem;
+    }
+    .btn-secondary-lime:hover {
+      box-shadow: 0 0 32px rgba(195, 244, 0, 0.4);
+      background: var(--secondary-dim);
+    }
+
+    .btn-large {
+      padding: 1rem 2rem;
+      font-size: 0.875rem;
+    }
+
+    .btn-icon {
+      width: 2rem; height: 2rem;
+      background: rgba(255,255,255,0.18);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .btn-icon-lg {
+      width: 2.5rem; height: 2.5rem;
+      background: rgba(0,0,0,0.18);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 24;
+      font-size: 1rem;
+      line-height: 1;
+    }
+
+    /* ─── Page Container ─────────────────────────────────── */
+    main { position: relative; z-index: 10; padding-top: 5rem; }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+
+    /* ─── HERO ───────────────────────────────────────────── */
+    #hero {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 4rem;
+      align-items: center;
+      padding-top: 5rem;
+      padding-bottom: 6rem;
+    }
+    @media (min-width: 1024px) {
+      #hero { grid-template-columns: 7fr 5fr; }
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.4rem 1rem;
+      border-radius: 9999px;
+      background: rgba(195,244,0,0.08);
+      border: 1px solid rgba(195,244,0,0.2);
+    }
+    .badge-dot {
+      width: 0.5rem; height: 0.5rem;
+      border-radius: 50%;
+      background: var(--secondary);
+      animation: pulseDot 2s ease-in-out infinite;
+    }
+    @keyframes pulseDot {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50%       { opacity: 0.5; transform: scale(0.7); }
+    }
+
+    .hero-headline {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(2.8rem, 8vw, 5.5rem);
+      font-weight: 900;
+      line-height: 1;
+      letter-spacing: -0.035em;
+      color: var(--on-surface);
+    }
+    .hero-headline .gradient-text {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-container) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-sub {
+      font-size: 1.15rem;
+      color: var(--on-surface-var);
+      line-height: 1.75;
+      max-width: 30rem;
+    }
+
+    /* ─── Email Form ─────────────────────────────────────── */
+    .email-form {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      max-width: 28rem;
+    }
+    @media (min-width: 500px) {
+      .email-form { flex-direction: row; }
+    }
+
+    .email-input {
+      flex: 1;
+      background: var(--surface-highest);
+      border: 1.5px solid transparent;
+      border-radius: 9999px;
+      padding: 1rem 1.5rem;
+      color: var(--on-surface);
+      font-family: 'Manrope', sans-serif;
+      font-size: 0.9rem;
+      outline: none;
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+    .email-input::placeholder { color: var(--on-surface-var); }
+    .email-input:focus {
+      border-color: var(--secondary);
+      box-shadow: 0 0 0 3px rgba(195,244,0,0.1);
+    }
+
+    .form-note {
+      font-size: 0.7rem;
+      color: rgba(173,170,170,0.55);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    /* Success state */
+    .form-success {
+      display: none;
+      align-items: center;
+      gap: 1rem;
+      background: rgba(195,244,0,0.08);
+      border: 1px solid rgba(195,244,0,0.25);
+      border-radius: 1rem;
+      padding: 1.25rem 1.5rem;
+    }
+    .form-success.show { display: flex; }
+    .success-icon {
+      width: 2.5rem; height: 2.5rem;
+      background: var(--secondary);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .success-icon .material-symbols-outlined {
+      color: var(--on-secondary);
+      font-size: 1.2rem;
+    }
+
+    /* ─── Hero Image ─────────────────────────────────────── */
+    .hero-image-wrap {
+      position: relative;
+    }
+    .hero-image-glow {
+      position: absolute;
+      inset: 0;
+      background: rgba(255,138,169,0.18);
+      filter: blur(80px);
+      border-radius: 50%;
+      transition: background 0.6s;
+    }
+    .hero-image-wrap:hover .hero-image-glow {
+      background: rgba(255,138,169,0.28);
+    }
+    .hero-image-frame {
+      position: relative;
+      border-radius: 1.25rem;
+      overflow: hidden;
+      border: 1px solid rgba(255,138,169,0.3);
+      box-shadow: 0 0 60px -12px rgba(255,138,169,0.5);
+    }
+    .hero-image-frame img {
+      width: 100%; height: auto; display: block;
+      transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .hero-image-frame:hover img { transform: scale(1.04); }
+
+    .stat-chip {
+      position: absolute;
+      bottom: -1.5rem;
+      left: -1.5rem;
+      padding: 1.25rem 1.5rem;
+      border-radius: 1rem;
+    }
+    .stat-chip .stat-num {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 2rem;
+      font-weight: 900;
+      color: var(--secondary);
+      line-height: 1;
+    }
+    .stat-chip .stat-label {
+      font-size: 0.6rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--on-surface-var);
+      margin-top: 0.25rem;
+      max-width: 8rem;
+      line-height: 1.4;
+    }
+
+    /* ─── Trusted Logos ──────────────────────────────────── */
+    #logos {
+      border-top: 1px solid rgba(255,255,255,0.04);
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+      background: rgba(19,19,19,0.5);
+      padding: 4rem 0;
+    }
+    .logos-label {
+      text-align: center;
+      color: rgba(173,170,170,0.5);
+      font-size: 0.6rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      margin-bottom: 2.5rem;
+    }
+    .logos-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem 2rem;
+      align-items: center;
+      opacity: 0.4;
+      filter: grayscale(1);
+      transition: opacity 0.6s, filter 0.6s;
+    }
+    @media (min-width: 640px)  { .logos-grid { grid-template-columns: repeat(4, 1fr); } }
+    @media (min-width: 1024px) { .logos-grid { grid-template-columns: repeat(6, 1fr); } }
+    .logos-grid:hover { opacity: 1; filter: grayscale(0); }
+    .logo-item {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 0.85rem;
+      letter-spacing: -0.02em;
+      display: flex; justify-content: center; align-items: center;
+      height: 2.5rem;
+      color: var(--on-surface);
+    }
+
+    /* ─── Offer / What's Inside ──────────────────────────── */
+    #offer { padding: 7rem 0; }
+
+    .section-eyebrow {
+      font-family: 'Manrope', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+
+    .section-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(2rem, 5vw, 3.75rem);
+      font-weight: 900;
+      letter-spacing: -0.035em;
+      color: var(--on-surface);
+      line-height: 1.05;
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      margin-top: 3.5rem;
+    }
+    @media (min-width: 768px) { .cards-grid { grid-template-columns: repeat(3, 1fr); } }
+
+    .offer-card {
+      border-radius: 1.25rem;
+      padding: 2.5rem;
+    }
+    .card-icon {
+      width: 4rem; height: 4rem;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 2rem;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    .card-icon .material-symbols-outlined {
+      font-size: 1.5rem;
+    }
+    .card-icon-primary {
+      background: rgba(255,138,169,0.1);
+      border-color: rgba(255,138,169,0.2);
+    }
+    .card-icon-secondary {
+      background: rgba(195,244,0,0.1);
+      border-color: rgba(195,244,0,0.2);
+    }
+    .card-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--on-surface);
+      margin-bottom: 0.75rem;
+    }
+    .card-body {
+      color: var(--on-surface-var);
+      line-height: 1.7;
+      font-size: 0.95rem;
+    }
+
+    /* ─── Value Prop ─────────────────────────────────────── */
+    #value {
+      position: relative;
+      padding: 7rem 0;
+      overflow: hidden;
+    }
+    .value-backdrop {
+      position: absolute;
+      inset: 0;
+      display: flex; align-items: center; justify-content: center;
+      pointer-events: none;
+    }
+    .value-backdrop span {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(4rem, 18vw, 14rem);
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      color: var(--on-surface);
+      opacity: 0.03;
+      white-space: nowrap;
+      user-select: none;
+    }
+    .value-center {
+      max-width: 52rem;
+      margin: 0 auto;
+      text-align: center;
+      position: relative;
+      z-index: 2;
+    }
+    .value-headline {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(3rem, 8vw, 6rem);
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      color: var(--on-surface);
+      margin-bottom: 1.5rem;
+      line-height: 1;
+    }
+    .value-body {
+      font-size: 1.1rem;
+      color: var(--on-surface-var);
+      line-height: 1.8;
+      max-width: 38rem;
+      margin: 0 auto 3rem;
+    }
+    .divider-line {
+      width: 1px;
+      height: 5rem;
+      background: linear-gradient(to bottom, var(--primary), transparent);
+      margin: 0 auto;
+    }
+
+    /* ─── Stats Row ──────────────────────────────────────── */
+    #stats {
+      padding: 5rem 0;
+      border-top: 1px solid rgba(255,255,255,0.04);
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+    }
+    @media (min-width: 768px) { .stats-grid { grid-template-columns: repeat(4, 1fr); } }
+    .stat-block { text-align: center; }
+    .stat-block .num {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(2.5rem, 5vw, 3.5rem);
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      color: var(--primary);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+    .stat-block .num.lime { color: var(--secondary); }
+    .stat-block .desc {
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--on-surface-var);
+    }
+
+    /* ─── Testimonial ────────────────────────────────────── */
+    #testimonial { padding: 7rem 0; }
+    .testimonial-card {
+      border-radius: 1.5rem;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    @media (min-width: 768px) { .testimonial-card { flex-direction: row; } }
+    .testimonial-photo {
+      width: 100%; height: 20rem;
+      object-fit: cover;
+      object-position: center top;
+      filter: grayscale(1);
+      transition: filter 0.7s, transform 0.7s;
+    }
+    @media (min-width: 768px) {
+      .testimonial-photo { width: 38%; height: auto; }
+    }
+    .testimonial-card:hover .testimonial-photo {
+      filter: grayscale(0);
+      transform: scale(1.04);
+    }
+    .testimonial-content {
+      flex: 1;
+      padding: 3rem 2.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    @media (min-width: 768px) {
+      .testimonial-content { padding: 4rem; }
+    }
+    .stars { display: flex; gap: 0.25rem; margin-bottom: 1.5rem; }
+    .stars .material-symbols-outlined {
+      font-size: 1rem;
+      color: var(--secondary);
+      font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    blockquote {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+      font-weight: 500;
+      color: var(--on-surface);
+      line-height: 1.45;
+      margin-bottom: 2rem;
+    }
+    .author-name {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--primary);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .author-role {
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--on-surface-var);
+      margin-top: 0.25rem;
+    }
+
+    /* ─── Process Steps ──────────────────────────────────── */
+    #process { padding: 7rem 0; }
+    .process-header { margin-bottom: 4rem; }
+    .steps-list { list-style: none; display: flex; flex-direction: column; gap: 0; }
+    .step-item {
+      display: flex;
+      gap: 2rem;
+      padding: 2rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      align-items: flex-start;
+      transition: background 0.3s;
+    }
+    .step-item:last-child { border-bottom: none; }
+    .step-item:hover { background: rgba(255,138,169,0.03); border-radius: 1rem; padding-left: 1rem; }
+    .step-number {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 3.5rem;
+      font-weight: 900;
+      color: rgba(255,138,169,0.15);
+      line-height: 1;
+      min-width: 3.5rem;
+      letter-spacing: -0.04em;
+    }
+    .step-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--on-surface);
+      margin-bottom: 0.5rem;
+    }
+    .step-desc {
+      color: var(--on-surface-var);
+      line-height: 1.7;
+      font-size: 0.95rem;
+    }
+
+    /* ─── Final CTA ──────────────────────────────────────── */
+    #cta { padding: 5rem 0 7rem; }
+    .cta-card {
+      border-radius: 2rem;
+      padding: 5rem 3rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    @media (min-width: 768px) {
+      .cta-card { padding: 7rem 6rem; }
+    }
+    .cta-orb-1 {
+      position: absolute; top: -6rem; right: -6rem;
+      width: 18rem; height: 18rem;
+      background: rgba(195,244,0,0.1);
+      filter: blur(80px); border-radius: 50%;
+      pointer-events: none;
+    }
+    .cta-orb-2 {
+      position: absolute; bottom: -6rem; left: -6rem;
+      width: 18rem; height: 18rem;
+      background: rgba(255,138,169,0.1);
+      filter: blur(80px); border-radius: 50%;
+      pointer-events: none;
+    }
+    .cta-headline {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(2.2rem, 6vw, 5rem);
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      color: var(--on-surface);
+      line-height: 1.05;
+      margin-bottom: 2.5rem;
+      position: relative; z-index: 2;
+    }
+    .cta-actions {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.25rem;
+      position: relative; z-index: 2;
+    }
+    .cta-note {
+      font-size: 0.8rem;
+      color: var(--on-surface-var);
+      max-width: 22rem;
+    }
+
+    /* ─── Footer ─────────────────────────────────────────── */
+    footer {
+      background: var(--surface-low);
+      border-top: 1px solid rgba(255,255,255,0.04);
+      padding: 3.5rem 2rem;
+      position: relative;
+      z-index: 10;
+    }
+    .footer-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      align-items: center;
+    }
+    @media (min-width: 768px) {
+      .footer-inner {
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 0;
       }
-    </script>
-<style>
-        html {
-            scroll-behavior: smooth;
-        }
-        body {
-            background-color: #0e0e0e;
-            color: #F9FFF6;
-            overflow-x: hidden;
-            -webkit-font-smoothing: antialiased;
-        }
-        .glow-orb {
-            filter: blur(100px);
-            opacity: 0.4;
-            transition: background-color 5s ease-in-out;
-        }
-        .reveal-on-scroll {
-            opacity: 0;
-        }
-        .reveal-on-scroll.active {
-            animation: reveal 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-        }
-        .magnetic-btn {
-            transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.3s ease;
-        }
-        .magnetic-btn:hover {
-            box-shadow: 0 0 20px rgba(255, 138, 169, 0.3);
-        }
-        .magnetic-btn:active {
-            transform: scale(0.92);
-            box-shadow: 0 0 40px rgba(255, 138, 169, 0.6);
-        }
-        .glass-card {
-            background: rgba(26, 26, 26, 0.4);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        .glass-card:hover {
-            border-color: rgba(255, 138, 169, 0.4);
-            box-shadow: 0 0 30px rgba(255, 138, 169, 0.1);
-        }
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 24;
-        }
-    </style>
-<body class="font-body selection:bg-primary selection:text-on-primary opacity-100" style="transition: opacity 1s;">
-<div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
-<div class="glow-orb absolute -top-1/4 -left-1/4 w-[80vw] h-[80vw] bg-primary animate-float"></div>
-<div class="glow-orb absolute top-1/2 -right-1/4 w-[60vw] h-[60vw] bg-secondary animate-float" style="animation-delay: -4s;"></div>
-<div class="glow-orb absolute -bottom-1/4 left-1/3 w-[50vw] h-[50vw] bg-primary animate-float" style="animation-delay: -8s;"></div>
-</div>
-<header class="fixed top-0 w-full z-50 bg-[#0e0e0e]/80 backdrop-blur-xl border-b border-white/5">
-<nav class="flex justify-between items-center max-w-7xl mx-auto px-8 py-5">
-<div class="text-2xl font-black text-white tracking-tighter uppercase font-headline flex items-center gap-1">
-            PROCESS<span class="text-primary">+</span>
-</div>
-<div class="hidden md:flex items-center space-x-10">
-<a class="font-headline font-bold tracking-tight text-[#ff8aa9] border-b-2 border-[#ff8aa9] pb-1 transition-all duration-300" href="#">Playbook</a>
-<a class="font-headline font-bold tracking-tight text-[#F9FFF6] hover:text-[#ff8aa9] transition-all duration-300" href="#">Results</a>
-<a class="font-headline font-bold tracking-tight text-[#F9FFF6] hover:text-[#ff8aa9] transition-all duration-300" href="#">Process</a>
-<a class="font-headline font-bold tracking-tight text-[#F9FFF6] hover:text-[#ff8aa9] transition-all duration-300" href="#">FAQ</a>
-</div>
-<button class="magnetic-btn bg-gradient-to-r from-primary to-primary-container text-on-primary px-8 py-3 rounded-full font-bold uppercase tracking-wider text-sm flex items-center group transition-all duration-300">
-            Get Access
-            <span class="ml-2 w-6 h-6 bg-white/20 rounded-full flex items-center justify-center">
-<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
-</span>
-</button>
-</nav>
-</header>
-<main class="relative z-10 pt-32">
-<section class="max-w-7xl mx-auto px-8 grid grid-cols-1 lg:grid-cols-12 gap-16 items-center py-24 reveal-on-scroll active">
-<div class="lg:col-span-7 space-y-8">
-<div class="inline-flex items-center space-x-2 px-4 py-2 rounded-full bg-secondary/10 border border-secondary/20">
-<div class="w-2 h-2 rounded-full bg-secondary animate-pulse"></div>
-<span class="text-secondary font-label text-xs uppercase tracking-widest font-bold">Limited Release 2024</span>
-</div>
-<h1 class="font-headline text-[3.5rem] lg:text-[5.5rem] font-black leading-[1] text-on-surface tracking-tighter">
-                GET YOUR FREE <br> <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary-container">STRATEGY PLAYBOOK</span>
-</h1>
-<p class="text-on-surface-variant text-xl max-w-xl leading-relaxed">
-                Stop guessing. Start executing with the exact framework we use to scale high-ticket service providers to $100k/mo. No fluff, just the process.
-            </p>
-<form class="flex flex-col sm:flex-row gap-4 max-w-md">
-<div class="relative flex-grow">
-<input class="w-full bg-surface-container-highest border-none rounded-full px-6 py-4 text-on-surface focus:ring-2 focus:ring-primary transition-all outline-none" placeholder="Enter your business email" type="email">
-</div>
-<button class="magnetic-btn bg-gradient-to-r from-primary to-primary-container text-on-primary px-8 py-4 rounded-full font-bold uppercase tracking-wider whitespace-nowrap flex items-center justify-center group transition-all" type="submit">
-                    DOWNLOAD NOW
-                    <span class="ml-3 w-8 h-8 bg-on-primary/10 rounded-full flex items-center justify-center">
-<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">download</span>
-</span>
-</button>
-</form>
-<p class="text-xs text-on-surface-variant/60 uppercase tracking-widest">Join 12,000+ founders already optimized</p>
-</div>
-<div class="lg:col-span-5 relative group">
-<div class="absolute inset-0 bg-primary/20 blur-[100px] rounded-full group-hover:bg-primary/30 transition-all duration-700"></div>
-<div class="relative rounded-lg overflow-hidden border border-primary/30 shadow-[0_0_50px_-12px_rgba(255,138,169,0.5)]">
-<img alt="Playbook Mockup" class="w-full h-auto object-cover transform transition-transform duration-700 hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB44SbLfhN6S7OO_G04Wo6FU6rj-uAidfx00AHVT2x14L9cs42dcWFj3A57wUlkolnimFvn1gqQMAvrwNq7KnELATfjqoDMARM4SHx6dcHdAvfk3_rp3gGORfgJb77cdUZGUrwLtSxuFXNxBMnUuaovDU1mLhVgf8jJX2TxaBJQrfyIzjkts7ifpc7UCt6nI2Us8XC0dQNW3cD9ul5vRfGtIQkeZ5PtT908LfbdnYh9V4SZm35-pjDmAYBf17O1AbJJindbBLEPHKM">
-</div>
-<div class="absolute -bottom-6 -left-6 glass-card p-6 rounded-lg max-w-[200px]">
-<div class="text-secondary text-3xl font-black font-headline">48</div>
-<div class="text-[10px] uppercase tracking-widest text-on-surface-variant">Pages of pure actionable tactical depth</div>
-</div>
-</div>
-</section>
-<section class="border-y border-outline-variant/10 bg-surface-container-low/50 py-16 reveal-on-scroll">
-<div class="max-w-7xl mx-auto px-8">
-<p class="text-center text-[10px] uppercase tracking-[0.3em] text-on-surface-variant/60 mb-12">Trusted by 15+ organizations across 3 continents</p>
-<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-x-12 gap-y-10 items-center opacity-40 grayscale hover:grayscale-0 transition-all duration-700">
-<div class="flex justify-center h-10"><span class="font-headline font-bold text-xl tracking-tighter">MWC</span></div>
-<div class="flex justify-center h-10"><span class="font-headline font-bold text-xl tracking-tighter">READ FOUNDATION</span></div>
-<div class="flex justify-center h-10"><span class="font-headline font-bold text-xl tracking-tighter">AL KHIDMAT</span></div>
-<div class="flex justify-center h-10"><span class="font-headline font-bold text-xl tracking-tighter">ruh</span></div>
-<div class="flex justify-center h-10"><span class="font-headline font-bold text-xl tracking-tighter">LaunchGood</span></div>
-<div class="flex justify-center h-10"><span class="font-headline font-bold text-xl tracking-tighter">SKR</span></div>
-<div class="flex justify-center h-10"><span class="font-headline font-bold text-xl tracking-tighter">KINETIC</span></div>
-<div class="flex justify-center h-10"><span class="font-headline font-bold text-xl tracking-tighter">NEXUS</span></div>
-<div class="flex justify-center h-10"><span class="font-headline font-bold text-xl tracking-tighter">VANTAGE</span></div>
-<div class="flex justify-center h-10"><span class="font-headline font-bold text-xl tracking-tighter">ORBIT</span></div>
-<div class="flex justify-center h-10"><span class="font-headline font-bold text-xl tracking-tighter">NOCTURNE</span></div>
-<div class="flex justify-center h-10"><span class="font-headline font-bold text-xl tracking-tighter">HUMAN CONCERN</span></div>
-</div>
-</div>
-</section>
-<section class="max-w-7xl mx-auto px-8 py-32">
-<div class="mb-20 reveal-on-scroll">
-<span class="text-primary font-label text-sm uppercase tracking-[0.3em] font-bold">The Ecosystem</span>
-<h2 class="font-headline text-4xl lg:text-6xl font-black mt-4 text-on-surface">What's Inside The Box</h2>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-<div class="glass-card rounded-lg p-10 reveal-on-scroll" style="transition-delay: 100ms;">
-<div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-8 border border-primary/20 transition-all duration-500">
-<span class="material-symbols-outlined text-3xl">fact_check</span>
-</div>
-<h3 class="text-2xl font-headline font-bold mb-4">The Checklist</h3>
-<p class="text-on-surface-variant leading-relaxed">A 12-point audit to identify exactly where your current acquisition funnel is leaking revenue.</p>
-</div>
-<div class="glass-card rounded-lg p-10 reveal-on-scroll" style="transition-delay: 200ms;">
-<div class="w-16 h-16 rounded-full bg-secondary/10 flex items-center justify-center mb-8 border border-secondary/20 transition-all duration-500">
-<span class="material-symbols-outlined text-3xl">layers</span>
-</div>
-<h3 class="text-2xl font-headline font-bold mb-4">The Templates</h3>
-<p class="text-on-surface-variant leading-relaxed">Plug-and-play landing page structures and email flows designed for 20%+ conversion rates.</p>
-</div>
-<div class="glass-card rounded-lg p-10 reveal-on-scroll" style="transition-delay: 300ms;">
-<div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-8 border border-primary/20 transition-all duration-500">
-<span class="material-symbols-outlined text-3xl">smart_display</span>
-</div>
-<h3 class="text-2xl font-headline font-bold mb-4">The Training Video</h3>
-<p class="text-on-surface-variant leading-relaxed">A 25-minute breakdown of the methodology that powers our elite client accounts.</p>
-</div>
-</div>
-</section>
-<section class="relative py-32 overflow-hidden reveal-on-scroll">
-<div class="absolute inset-0 flex items-center justify-center opacity-5 pointer-events-none">
-<span class="text-[20vw] font-black font-headline tracking-tighter whitespace-nowrap">PROCESS FIRST</span>
-</div>
-<div class="max-w-4xl mx-auto px-8 text-center relative z-10">
-<h2 class="font-headline text-5xl lg:text-8xl font-black text-on-surface mb-8">Systems Over Luck</h2>
-<p class="text-xl text-on-surface-variant leading-relaxed mb-12">
-                Luck is a luxury for the unprepared. In the nocturnal market of 2024, only the systematic survive. We build frameworks that turn unpredictability into a math problem.
-            </p>
-<div class="flex justify-center">
-<div class="w-px h-24 bg-gradient-to-b from-primary to-transparent"></div>
-</div>
-</div>
-</section>
-<section class="max-w-7xl mx-auto px-8 py-32 reveal-on-scroll">
-<div class="glass-card rounded-lg overflow-hidden flex flex-col md:flex-row">
-<div class="md:w-1/3 h-80 md:h-auto overflow-hidden">
-<img alt="Testimonial Author" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuClt-2P1iaZjoOCRRJrf3hbGh-Xc8qxkKnxhxaZMf2DFaPkXHCkYgjzcaozTEjDZQOnlkWDqhcmAVS5SMLA4z4KO8_r_sAUgpKv0iF_xu-cpnpaGDXIpRt9RFwKW7enojCi_VHJ9daxuPclCLeEzRgWdD1Tjkkr8y-SbAkQQuT5BzBtaw2BDOzuxY1eOUma11WD_T5Cs3JA242efIC1UjWrpWGSlLjvJwFhMqZ_Qk7nut6c5UHhVIO_0frxxa00Svr1JowlZHIhbnY">
-</div>
-<div class="md:w-2/3 p-12 lg:p-20 flex flex-col justify-center">
-<div class="flex space-x-1 mb-8">
-<span class="material-symbols-outlined text-secondary text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-secondary text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-secondary text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-secondary text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-secondary text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
-</div>
-<blockquote class="text-2xl lg:text-3xl font-headline font-medium text-on-surface leading-tight mb-8">
-                    "The Process+ playbook didn't just give us tips; it gave us a language for growth that we were missing. We implemented the audit checklist and saw a 34% bump in retention within 14 days."
-                </blockquote>
-<div>
-<cite class="not-italic block font-headline font-bold text-lg text-primary">MARCUS VANCE</cite>
-<span class="text-on-surface-variant text-sm uppercase tracking-widest">Head of Operations, READ Foundation</span>
-</div>
-</div>
-</div>
-</section>
-<section class="max-w-7xl mx-auto px-8 py-40 text-center reveal-on-scroll">
-<div class="glass-card p-16 lg:p-24 rounded-xl relative overflow-hidden border border-white/5">
-<div class="absolute -top-24 -right-24 w-64 h-64 bg-secondary/10 blur-[80px] rounded-full"></div>
-<div class="absolute -bottom-24 -left-24 w-64 h-64 bg-primary/10 blur-[80px] rounded-full"></div>
-<h2 class="font-headline text-4xl lg:text-7xl font-black mb-10 relative z-10">THE FUTURE BELONGS TO <br> THE OPTIMIZED.</h2>
-<div class="flex flex-col items-center space-y-6 relative z-10">
-<button class="magnetic-btn bg-secondary text-on-secondary px-12 py-5 rounded-full font-black uppercase tracking-widest text-lg flex items-center group transition-all duration-300">
-                    Claim Your Free Resource
-                    <span class="ml-4 w-10 h-10 bg-on-secondary/20 rounded-full flex items-center justify-center">
-<span class="material-symbols-outlined">auto_awesome</span>
-</span>
-</button>
-<p class="text-on-surface-variant text-sm max-w-sm">
-                    Zero cost. Zero spam. 100% tactical depth. Instant PDF access delivered to your inbox.
-                </p>
-</div>
-</div>
-</section>
-</main>
-<footer class="bg-[#0e0e0e] w-full py-20 px-8 border-t border-white/5 bg-[#131313] relative z-10">
-<div class="flex flex-col md:flex-row justify-between items-center max-w-7xl mx-auto space-y-8 md:space-y-0">
-<div class="text-lg font-bold text-white font-headline flex items-center gap-1">PROCESS<span class="text-primary">+</span></div>
-<div class="flex space-x-8">
-<a class="font-headline text-[10px] uppercase tracking-[0.2em] text-[#F9FFF6]/40 hover:text-white transition-colors" href="#">Privacy Policy</a>
-<a class="font-headline text-[10px] uppercase tracking-[0.2em] text-[#F9FFF6]/40 hover:text-white transition-colors" href="#">Terms of Service</a>
-<a class="font-headline text-[10px] uppercase tracking-[0.2em] text-[#F9FFF6]/40 hover:text-white transition-colors" href="#">Contact</a>
-<a class="font-headline text-[10px] uppercase tracking-[0.2em] text-[#F9FFF6]/40 hover:text-white transition-colors" href="#">Twitter</a>
-<a class="font-headline text-[10px] uppercase tracking-[0.2em] text-[#F9FFF6]/40 hover:text-white transition-colors" href="#">LinkedIn</a>
-</div>
-<div class="font-headline text-[10px] uppercase tracking-[0.2em] text-[#F9FFF6]/50">
-            © 2024 PROCESS PLUS STRATEGY. ALL RIGHTS RESERVED.
+    }
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem 2rem;
+      justify-content: center;
+    }
+    .footer-links a {
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(249,255,246,0.35);
+      text-decoration: none;
+      font-family: 'Space Grotesk', sans-serif;
+      transition: color 0.25s;
+    }
+    .footer-links a:hover { color: var(--on-surface); }
+    .footer-copy {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(249,255,246,0.4);
+    }
+
+    /* ─── Mobile hamburger hint ──────────────────────────── */
+    .nav-cta-mobile { display: flex; }
+    @media (min-width: 768px) { .btn-primary.nav-btn { display: inline-flex; } }
+
+    /* ─── Scroll indicator ───────────────────────────────── */
+    .scroll-indicator {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 3rem;
+      opacity: 0.4;
+      animation: fadeUpDown 2s ease-in-out infinite;
+    }
+    .scroll-indicator span { font-size: 0.55rem; letter-spacing: 0.3em; text-transform: uppercase; }
+    @keyframes fadeUpDown {
+      0%, 100% { transform: translateY(0); opacity: 0.4; }
+      50% { transform: translateY(6px); opacity: 0.7; }
+    }
+
+    /* ─── Magnetic button JS hook ────────────────────────── */
+    .magnetic { will-change: transform; }
+  </style>
+</head>
+<body>
+
+  <!-- Ambient background orbs -->
+  <div class="orb-layer" aria-hidden="true">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
+
+  <!-- ── NAVBAR ──────────────────────────────────────────── -->
+  <header class="navbar" role="banner">
+    <div class="navbar-inner">
+      <a href="#" class="logo" aria-label="Process Plus Home">PROCESS<span>+</span></a>
+      <nav aria-label="Primary navigation">
+        <ul class="nav-links">
+          <li><a href="#offer" class="active" id="nav-playbook">Playbook</a></li>
+          <li><a href="#stats" id="nav-results">Results</a></li>
+          <li><a href="#process" id="nav-process">Process</a></li>
+          <li><a href="#testimonial" id="nav-faq">Community</a></li>
+        </ul>
+      </nav>
+      <button class="btn btn-primary magnetic" id="nav-cta-btn" aria-label="Get Access to Playbook">
+        Get Access
+        <span class="btn-icon">
+          <span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span>
+        </span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ── MAIN CONTENT ───────────────────────────────────── -->
+  <main id="main-content">
+
+    <!-- HERO -->
+    <section id="hero" class="container">
+      <!-- Left: Copy & Form -->
+      <div style="display:flex; flex-direction:column; gap:2rem;">
+        <div class="reveal" style="display:flex; flex-direction:column; gap:1.5rem;">
+          <div class="hero-badge">
+            <div class="badge-dot" aria-hidden="true"></div>
+            <span class="label-micro" style="color:var(--secondary)">Limited Release 2025</span>
+          </div>
+          <h1 class="hero-headline">
+            GET YOUR FREE<br/>
+            <span class="gradient-text">STRATEGY<br/>PLAYBOOK</span>
+          </h1>
+          <p class="hero-sub">
+            Stop guessing. Start executing with the exact framework we use to scale high-ticket service providers to $100k/mo. No fluff — just the process.
+          </p>
         </div>
-</div>
-</footer>
-<script>
-    const observerOptions = { threshold: 0.1 };
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
-    }, observerOptions);
-    document.querySelectorAll('.reveal-on-scroll').forEach(el => observer.observe(el));
-    document.querySelectorAll('.magnetic-btn').forEach(btn => {
-        btn.addEventListener('mousemove', (e) => {
-            const rect = btn.getBoundingClientRect();
-            const x = e.clientX - rect.left - rect.width / 2;
-            const y = e.clientY - rect.top - rect.height / 2;
-            btn.style.transform = `translate(${x * 0.2}px, ${y * 0.2}px) scale(1.02)`;
+
+        <!-- Form -->
+        <div class="reveal reveal-delay-2">
+          <form class="email-form" id="hero-form" novalidate>
+            <input
+              class="email-input"
+              type="email"
+              id="hero-email"
+              name="email"
+              placeholder="Enter your business email"
+              autocomplete="email"
+              required
+              aria-label="Business email address"
+            />
+            <button class="btn btn-primary btn-large magnetic" type="submit" id="hero-submit-btn">
+              Download Now
+              <span class="btn-icon">
+                <span class="material-symbols-outlined" aria-hidden="true" style="font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 24;">download</span>
+              </span>
+            </button>
+          </form>
+
+          <div class="form-success" id="form-success" role="status" aria-live="polite">
+            <div class="success-icon">
+              <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1,'wght' 500,'GRAD' 0,'opsz' 24;">check_circle</span>
+            </div>
+            <div>
+              <div style="font-family:'Space Grotesk',sans-serif;font-weight:700;color:var(--secondary);font-size:0.9rem;">Check your inbox!</div>
+              <div style="font-size:0.8rem;color:var(--on-surface-var);margin-top:0.2rem;">Your playbook is on its way.</div>
+            </div>
+          </div>
+
+          <p class="form-note" style="margin-top:1rem;" aria-label="Social proof">Join 12,000+ founders already optimized</p>
+        </div>
+      </div>
+
+      <!-- Right: Mockup image -->
+      <div class="hero-image-wrap reveal reveal-delay-3">
+        <div class="hero-image-glow" aria-hidden="true"></div>
+        <div class="hero-image-frame">
+          <img
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuB44SbLfhN6S7OO_G04Wo6FU6rj-uAidfx00AHVT2x14L9cs42dcWFj3A57wUlkolnimFvn1gqQMAvrwNq7KnELATfjqoDMARM4SHx6dcHdAvfk3_rp3gGORfgJb77cdUZGUrwLtSxuFXNxBMnUuaovDU1mLhVgf8jJX2TxaBJQrfyIzjkts7ifpc7UCt6nI2Us8XC0dQNW3cD9ul5vRfGtIQkeZ5PtT908LfbdnYh9V4SZm35-pjDmAYBf17O1AbJJindbBLEPHKM"
+            alt="Process+ Strategy Playbook cover — premium minimalist ebook design"
+            width="600" height="720"
+            loading="eager"
+          />
+        </div>
+        <div class="stat-chip glass-card">
+          <div class="stat-num">48</div>
+          <div class="stat-label">Pages of pure actionable tactical depth</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRUSTED LOGOS -->
+    <section id="logos" aria-label="Trusted organizations">
+      <div class="container reveal">
+        <p class="logos-label">Trusted by 15+ organizations across 3 continents</p>
+        <div class="logos-grid">
+          <div class="logo-item">MWC</div>
+          <div class="logo-item">READ FOUNDATION</div>
+          <div class="logo-item">AL KHIDMAT</div>
+          <div class="logo-item">ruh</div>
+          <div class="logo-item">LaunchGood</div>
+          <div class="logo-item">SKR</div>
+          <div class="logo-item">KINETIC</div>
+          <div class="logo-item">NEXUS</div>
+          <div class="logo-item">VANTAGE</div>
+          <div class="logo-item">ORBIT</div>
+          <div class="logo-item">NOCTURNE</div>
+          <div class="logo-item">HUMAN CONCERN</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- OFFER BREAKDOWN -->
+    <section id="offer" aria-labelledby="offer-heading">
+      <div class="container">
+        <div class="reveal">
+          <p class="section-eyebrow">The Ecosystem</p>
+          <h2 id="offer-heading" class="section-title">What's Inside<br/>The Box</h2>
+        </div>
+        <div class="cards-grid">
+          <!-- Card 1 -->
+          <article class="offer-card glass-card reveal reveal-delay-1">
+            <div class="card-icon card-icon-primary">
+              <span class="material-symbols-outlined" aria-hidden="true">fact_check</span>
+            </div>
+            <h3 class="card-title">The Checklist</h3>
+            <p class="card-body">A 12-point audit to identify exactly where your current acquisition funnel is leaking revenue — and how to plug it in 72 hours.</p>
+          </article>
+          <!-- Card 2 -->
+          <article class="offer-card glass-card reveal reveal-delay-2">
+            <div class="card-icon card-icon-secondary">
+              <span class="material-symbols-outlined" aria-hidden="true">layers</span>
+            </div>
+            <h3 class="card-title">The Templates</h3>
+            <p class="card-body">Plug-and-play landing page structures and email flows designed for 20%+ conversion rates — battle-tested across 40+ campaigns.</p>
+          </article>
+          <!-- Card 3 -->
+          <article class="offer-card glass-card reveal reveal-delay-3">
+            <div class="card-icon card-icon-primary">
+              <span class="material-symbols-outlined" aria-hidden="true">smart_display</span>
+            </div>
+            <h3 class="card-title">The Training Video</h3>
+            <p class="card-body">A 25-minute breakdown of the exact methodology powering our elite client accounts — from cold to $100k/mo in under 90 days.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- VALUE PROP -->
+    <section id="value" aria-labelledby="value-heading">
+      <div class="value-backdrop" aria-hidden="true">
+        <span>PROCESS FIRST</span>
+      </div>
+      <div class="container">
+        <div class="value-center reveal">
+          <h2 id="value-heading" class="value-headline">Systems Over Luck</h2>
+          <p class="value-body">
+            Luck is a luxury for the unprepared. In a competitive market, only the systematic survive. We build frameworks that turn unpredictability into a repeatable math problem you can solve every quarter.
+          </p>
+          <div class="divider-line" aria-hidden="true"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATS ROW -->
+    <section id="stats" aria-label="Key results and statistics">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-block reveal reveal-delay-1">
+            <div class="num">12k<span style="font-size:0.5em;color:var(--on-surface-var)">+</span></div>
+            <div class="desc">Founders optimized</div>
+          </div>
+          <div class="stat-block reveal reveal-delay-2">
+            <div class="num lime">34%</div>
+            <div class="desc">Avg. retention lift</div>
+          </div>
+          <div class="stat-block reveal reveal-delay-3">
+            <div class="num">90<span style="font-size:0.5em;color:var(--on-surface-var)">d</span></div>
+            <div class="desc">Average timeline to $100k</div>
+          </div>
+          <div class="stat-block reveal reveal-delay-4">
+            <div class="num lime">15<span style="font-size:0.5em;color:var(--on-surface-var)">+</span></div>
+            <div class="desc">Organizations across 3 continents</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIAL -->
+    <section id="testimonial" aria-label="Client testimonial">
+      <div class="container reveal">
+        <div class="testimonial-card glass-card">
+          <div style="overflow:hidden; flex-shrink:0;" class="testimonial-photo-wrap">
+            <img
+              class="testimonial-photo"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuClt-2P1iaZjoOCRRJrf3hbGh-Xc8qxkKnxhxaZMf2DFaPkXHCkYgjzcaozTEjDZQOnlkWDqhcmAVS5SMLA4z4KO8_r_sAUgpKv0iF_xu-cpnpaGDXIpRt9RFwKW7enojCi_VHJ9daxuPclCLeEzRgWdD1Tjkkr8y-SbAkQQuT5BzBtaw2BDOzuxY1eOUma11WD_T5Cs3JA242efIC1UjWrpWGSlLjvJwFhMqZ_Qk7nut6c5UHhVIO_0frxxa00Svr1JowlZHIhbnY"
+              alt="Marcus Vance, Head of Operations at READ Foundation"
+              width="480" height="560"
+              loading="lazy"
+            />
+          </div>
+          <div class="testimonial-content">
+            <div class="stars" aria-label="5 star rating">
+              <span class="material-symbols-outlined" aria-hidden="true">star</span>
+              <span class="material-symbols-outlined" aria-hidden="true">star</span>
+              <span class="material-symbols-outlined" aria-hidden="true">star</span>
+              <span class="material-symbols-outlined" aria-hidden="true">star</span>
+              <span class="material-symbols-outlined" aria-hidden="true">star</span>
+            </div>
+            <blockquote>
+              "The Process+ playbook didn't just give us tips — it gave us a language for growth we were missing. We implemented the audit checklist and saw a <strong style="color:var(--secondary)">34% bump in retention</strong> within 14 days."
+            </blockquote>
+            <div>
+              <cite class="author-name">Marcus Vance</cite>
+              <p class="author-role">Head of Operations, READ Foundation</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROCESS STEPS -->
+    <section id="process" aria-labelledby="process-heading">
+      <div class="container">
+        <div class="process-header reveal">
+          <p class="section-eyebrow">How It Works</p>
+          <h2 id="process-heading" class="section-title">The 3-Step<br/>Framework</h2>
+        </div>
+        <ol class="steps-list" role="list">
+          <li class="step-item reveal reveal-delay-1">
+            <span class="step-number" aria-hidden="true">01</span>
+            <div>
+              <h3 class="step-title">Audit Your Funnel</h3>
+              <p class="step-desc">Use the 12-point checklist to diagnose where leads are dropping off. Most businesses lose 60% of qualified leads at the same 3 points — this kills the guesswork instantly.</p>
+            </div>
+          </li>
+          <li class="step-item reveal reveal-delay-2">
+            <span class="step-number" aria-hidden="true">02</span>
+            <div>
+              <h3 class="step-title">Deploy the Templates</h3>
+              <p class="step-desc">Drop our plug-and-play landing page and email frameworks into your existing stack. No redesign required — tested copy structures that convert cold traffic at 20%+.</p>
+            </div>
+          </li>
+          <li class="step-item reveal reveal-delay-3">
+            <span class="step-number" aria-hidden="true">03</span>
+            <div>
+              <h3 class="step-title">Scale the System</h3>
+              <p class="step-desc">Watch the 25-min training to see how to compound the results. Once the system runs, $30k months become $100k months — not through hustle, but through architecture.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section id="cta" aria-labelledby="cta-heading">
+      <div class="container">
+        <div class="cta-card glass-card reveal">
+          <div class="cta-orb-1" aria-hidden="true"></div>
+          <div class="cta-orb-2" aria-hidden="true"></div>
+          <h2 id="cta-heading" class="cta-headline">
+            THE FUTURE BELONGS<br/>TO THE OPTIMIZED.
+          </h2>
+          <div class="cta-actions">
+            <button class="btn btn-secondary-lime magnetic" id="cta-main-btn" aria-label="Claim your free Strategy Playbook">
+              Claim Your Free Resource
+              <span class="btn-icon-lg">
+                <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 24; font-size:1.1rem;" aria-hidden="true">auto_awesome</span>
+              </span>
+            </button>
+            <p class="cta-note">Zero cost. Zero spam. 100% tactical depth. Instant PDF access delivered to your inbox.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── FOOTER ──────────────────────────────────────────── -->
+  <footer role="contentinfo">
+    <div class="footer-inner">
+      <a href="#" class="logo" aria-label="Process Plus">PROCESS<span>+</span></a>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Contact</a>
+        <a href="#" aria-label="Twitter">Twitter</a>
+        <a href="#" aria-label="LinkedIn">LinkedIn</a>
+      </nav>
+      <p class="footer-copy">© 2025 Process Plus Strategy. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- ── SCRIPTS ─────────────────────────────────────────── -->
+  <script>
+    // Add js-loaded immediately — this opts the reveal system in
+    // but only AFTER we immediately mark all in-viewport elements visible
+    document.documentElement.classList.add('js-loading');
+    // ── Reveal on scroll ──────────────────────────────────────
+    // Step 1: Mark all in-viewport elements as visible FIRST
+    // Step 2: Then add js-loaded to body to enable the animation system
+    // This guarantees no flash of invisible content.
+    function initReveal() {
+      const revealEls = document.querySelectorAll('.reveal');
+
+      // Immediately mark anything in or near the viewport as visible
+      revealEls.forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight + 50) {
+          el.classList.add('visible');
+        }
+      });
+
+      // NOW opt into the animation system — elements already .visible
+      // will show instantly (transition fires from visible state)
+      document.body.classList.add('js-loaded');
+
+      // Watch remaining off-screen elements
+      const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            revealObserver.unobserve(entry.target);
+          }
         });
-        btn.addEventListener('mouseleave', () => { btn.style.transform = 'translate(0, 0) scale(1)'; });
+      }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+      revealEls.forEach(el => {
+        if (!el.classList.contains('visible')) {
+          revealObserver.observe(el);
+        }
+      });
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initReveal);
+    } else {
+      initReveal();
+    }
+
+    // ── Magnetic button effect ────────────────────────────────
+    document.querySelectorAll('.magnetic').forEach(btn => {
+      btn.addEventListener('mousemove', e => {
+        const r = btn.getBoundingClientRect();
+        const x = (e.clientX - r.left - r.width  / 2) * 0.22;
+        const y = (e.clientY - r.top  - r.height / 2) * 0.22;
+        btn.style.transform = `translate(${x}px, ${y}px) scale(1.02)`;
+      });
+      btn.addEventListener('mouseleave', () => {
+        btn.style.transform = 'translate(0,0) scale(1)';
+      });
     });
-</script></body></html>
+
+    // ── Click glow pulse ──────────────────────────────────────
+    document.addEventListener('click', e => {
+      const target = e.target.closest('button') || e.target.closest('.glass-card');
+      if (!target) return;
+      target.style.transition = 'none';
+      target.style.boxShadow  = '0 0 80px rgba(255,138,169,0.7)';
+      requestAnimationFrame(() => {
+        setTimeout(() => {
+          target.style.transition  = 'all 0.6s cubic-bezier(0.16,1,0.3,1)';
+          target.style.boxShadow   = '';
+        }, 60);
+      });
+    });
+
+    // ── Email form submission ─────────────────────────────────
+    const form    = document.getElementById('hero-form');
+    const success = document.getElementById('form-success');
+
+    if (form) {
+      form.addEventListener('submit', e => {
+        e.preventDefault();
+        const email = document.getElementById('hero-email').value.trim();
+        if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+          document.getElementById('hero-email').focus();
+          document.getElementById('hero-email').style.borderColor = 'rgba(255,113,108,0.8)';
+          return;
+        }
+        // Simulate submission
+        form.style.display = 'none';
+        success.classList.add('show');
+        document.querySelector('.form-note').style.display = 'none';
+      });
+
+      document.getElementById('hero-email').addEventListener('input', () => {
+        document.getElementById('hero-email').style.borderColor = '';
+      });
+    }
+
+    // ── CTA buttons scroll to form ────────────────────────────
+    document.getElementById('nav-cta-btn').addEventListener('click', () => {
+      document.getElementById('hero-email').focus({ preventScroll: false });
+      document.getElementById('hero').scrollIntoView({ behavior: 'smooth' });
+    });
+
+    document.getElementById('cta-main-btn').addEventListener('click', () => {
+      document.getElementById('hero').scrollIntoView({ behavior: 'smooth' });
+      setTimeout(() => document.getElementById('hero-email').focus(), 600);
+    });
+
+    // ── Active nav link on scroll ─────────────────────────────
+    const sections = ['offer', 'stats', 'process', 'testimonial'];
+    const navMap   = { offer: 'nav-playbook', stats: 'nav-results', process: 'nav-process', testimonial: 'nav-faq' };
+    const allNavLinks = document.querySelectorAll('.nav-links a');
+
+    const navObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          allNavLinks.forEach(a => a.classList.remove('active'));
+          const id = navMap[entry.target.id];
+          if (id) document.getElementById(id)?.classList.add('active');
+        }
+      });
+    }, { threshold: 0.4 });
+
+    sections.forEach(id => {
+      const el = document.getElementById(id);
+      if (el) navObserver.observe(el);
+    });
+
+    // ── Testimonial image styling (can't do in CSS for :first-child in flex) ──
+    (() => {
+      const wrap = document.querySelector('.testimonial-photo-wrap');
+      if (!wrap) return;
+      wrap.style.cssText = `
+        width: 100%; height: 20rem; overflow: hidden; flex-shrink: 0;
+      `;
+      const mq = window.matchMedia('(min-width: 768px)');
+      const applyMq = q => {
+        if (q.matches) { wrap.style.width = '38%'; wrap.style.height = 'auto'; }
+        else           { wrap.style.width = '100%'; wrap.style.height = '20rem'; }
+      };
+      applyMq(mq);
+      mq.addEventListener('change', applyMq);
+    })();
+  </script>
+</body>
+</html>
