@@ -1,0 +1,332 @@
+<!DOCTYPE html><html class="dark" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Process+ | Get Your Free Strategy Playbook</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&amp;family=Manrope:wght@200;400;600;800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary": "#c3f400",
+              "surface": "#0e0e0e",
+              "tertiary-fixed-dim": "#78a1ff",
+              "on-primary-fixed": "#000000",
+              "surface-tint": "#ff8aa9",
+              "on-primary": "#62002b",
+              "on-tertiary-container": "#000000",
+              "surface-dim": "#0e0e0e",
+              "on-surface-variant": "#adaaaa",
+              "secondary-dim": "#b7e500",
+              "surface-container-high": "#20201f",
+              "surface-container": "#1a1a1a",
+              "on-surface": "#ffffff",
+              "surface-variant": "#262626",
+              "error-dim": "#d7383b",
+              "primary-container": "#ff719b",
+              "primary-dim": "#e4006c",
+              "surface-container-highest": "#262626",
+              "on-error-container": "#ffa8a3",
+              "tertiary": "#6f9bff",
+              "error": "#ff716c",
+              "primary-fixed-dim": "#ff528c",
+              "on-tertiary-fixed": "#00163e",
+              "tertiary-dim": "#006df8",
+              "outline-variant": "#484847",
+              "secondary-container": "#506600",
+              "primary-fixed": "#ff719b",
+              "error-container": "#9f0519",
+              "inverse-primary": "#bc0058",
+              "tertiary-container": "#006ffd",
+              "surface-bright": "#2c2c2c",
+              "outline": "#767575",
+              "on-secondary-container": "#efffbc",
+              "on-secondary": "#455900",
+              "on-secondary-fixed": "#354500",
+              "on-tertiary-fixed-variant": "#003581",
+              "on-secondary-fixed-variant": "#4e6300",
+              "on-tertiary": "#001d4e",
+              "secondary-fixed": "#c3f400",
+              "secondary-fixed-dim": "#b7e500",
+              "on-background": "#ffffff",
+              "tertiary-fixed": "#8eafff",
+              "inverse-on-surface": "#565555",
+              "surface-container-low": "#131313",
+              "surface-container-lowest": "#000000",
+              "on-primary-fixed-variant": "#5e0028",
+              "on-error": "#490006",
+              "primary": "#ff8aa9",
+              "on-primary-container": "#4c0020",
+              "inverse-surface": "#fcf9f8",
+              "background": "#0e0e0e"
+            },
+            fontFamily: {
+              "headline": ["Space Grotesk"],
+              "body": ["Manrope"],
+              "label": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+            animation: {
+              'pulse-slow': 'pulse 8s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+              'float': 'float 12s ease-in-out infinite',
+              'reveal': 'reveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+            },
+            keyframes: {
+              float: {
+                '0%, 100%': { transform: 'translate(0, 0) scale(1)' },
+                '33%': { transform: 'translate(10%, -10%) scale(1.1)' },
+                '66%': { transform: 'translate(-5%, 15%) scale(0.9)' },
+              },
+              reveal: {
+                '0%': { opacity: '0', transform: 'translateY(40px) scale(0.95)' },
+                '100%': { opacity: '1', transform: 'translateY(0) scale(1)' },
+              }
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            background-color: #0e0e0e;
+            color: #F9FFF6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+        .glow-orb {
+            filter: blur(100px);
+            opacity: 0.4;
+            transition: background-color 5s ease-in-out;
+        }
+        .reveal-on-scroll {
+            opacity: 0;
+        }
+        .reveal-on-scroll.active {
+            animation: reveal 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        .magnetic-btn {
+            transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.3s ease;
+        }
+        .magnetic-btn:hover {
+            box-shadow: 0 0 20px rgba(255, 138, 169, 0.3);
+        }
+        .magnetic-btn:active {
+            transform: scale(0.92);
+            box-shadow: 0 0 40px rgba(255, 138, 169, 0.6);
+        }
+        .glass-card {
+            background: rgba(26, 26, 26, 0.4);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .glass-card:hover {
+            border-color: rgba(255, 138, 169, 0.4);
+            box-shadow: 0 0 30px rgba(255, 138, 169, 0.1);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<body class="font-body selection:bg-primary selection:text-on-primary opacity-100" style="transition: opacity 1s;">
+<div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+<div class="glow-orb absolute -top-1/4 -left-1/4 w-[80vw] h-[80vw] bg-primary animate-float"></div>
+<div class="glow-orb absolute top-1/2 -right-1/4 w-[60vw] h-[60vw] bg-secondary animate-float" style="animation-delay: -4s;"></div>
+<div class="glow-orb absolute -bottom-1/4 left-1/3 w-[50vw] h-[50vw] bg-primary animate-float" style="animation-delay: -8s;"></div>
+</div>
+<header class="fixed top-0 w-full z-50 bg-[#0e0e0e]/80 backdrop-blur-xl border-b border-white/5">
+<nav class="flex justify-between items-center max-w-7xl mx-auto px-8 py-5">
+<div class="text-2xl font-black text-white tracking-tighter uppercase font-headline flex items-center gap-1">
+            PROCESS<span class="text-primary">+</span>
+</div>
+<div class="hidden md:flex items-center space-x-10">
+<a class="font-headline font-bold tracking-tight text-[#ff8aa9] border-b-2 border-[#ff8aa9] pb-1 transition-all duration-300" href="#">Playbook</a>
+<a class="font-headline font-bold tracking-tight text-[#F9FFF6] hover:text-[#ff8aa9] transition-all duration-300" href="#">Results</a>
+<a class="font-headline font-bold tracking-tight text-[#F9FFF6] hover:text-[#ff8aa9] transition-all duration-300" href="#">Process</a>
+<a class="font-headline font-bold tracking-tight text-[#F9FFF6] hover:text-[#ff8aa9] transition-all duration-300" href="#">FAQ</a>
+</div>
+<button class="magnetic-btn bg-gradient-to-r from-primary to-primary-container text-on-primary px-8 py-3 rounded-full font-bold uppercase tracking-wider text-sm flex items-center group transition-all duration-300">
+            Get Access
+            <span class="ml-2 w-6 h-6 bg-white/20 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</span>
+</button>
+</nav>
+</header>
+<main class="relative z-10 pt-32">
+<section class="max-w-7xl mx-auto px-8 grid grid-cols-1 lg:grid-cols-12 gap-16 items-center py-24 reveal-on-scroll active">
+<div class="lg:col-span-7 space-y-8">
+<div class="inline-flex items-center space-x-2 px-4 py-2 rounded-full bg-secondary/10 border border-secondary/20">
+<div class="w-2 h-2 rounded-full bg-secondary animate-pulse"></div>
+<span class="text-secondary font-label text-xs uppercase tracking-widest font-bold">Limited Release 2024</span>
+</div>
+<h1 class="font-headline text-[3.5rem] lg:text-[5.5rem] font-black leading-[1] text-on-surface tracking-tighter">
+                GET YOUR FREE <br> <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-primary-container">STRATEGY PLAYBOOK</span>
+</h1>
+<p class="text-on-surface-variant text-xl max-w-xl leading-relaxed">
+                Stop guessing. Start executing with the exact framework we use to scale high-ticket service providers to $100k/mo. No fluff, just the process.
+            </p>
+<form class="flex flex-col sm:flex-row gap-4 max-w-md">
+<div class="relative flex-grow">
+<input class="w-full bg-surface-container-highest border-none rounded-full px-6 py-4 text-on-surface focus:ring-2 focus:ring-primary transition-all outline-none" placeholder="Enter your business email" type="email">
+</div>
+<button class="magnetic-btn bg-gradient-to-r from-primary to-primary-container text-on-primary px-8 py-4 rounded-full font-bold uppercase tracking-wider whitespace-nowrap flex items-center justify-center group transition-all" type="submit">
+                    DOWNLOAD NOW
+                    <span class="ml-3 w-8 h-8 bg-on-primary/10 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">download</span>
+</span>
+</button>
+</form>
+<p class="text-xs text-on-surface-variant/60 uppercase tracking-widest">Join 12,000+ founders already optimized</p>
+</div>
+<div class="lg:col-span-5 relative group">
+<div class="absolute inset-0 bg-primary/20 blur-[100px] rounded-full group-hover:bg-primary/30 transition-all duration-700"></div>
+<div class="relative rounded-lg overflow-hidden border border-primary/30 shadow-[0_0_50px_-12px_rgba(255,138,169,0.5)]">
+<img alt="Playbook Mockup" class="w-full h-auto object-cover transform transition-transform duration-700 hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB44SbLfhN6S7OO_G04Wo6FU6rj-uAidfx00AHVT2x14L9cs42dcWFj3A57wUlkolnimFvn1gqQMAvrwNq7KnELATfjqoDMARM4SHx6dcHdAvfk3_rp3gGORfgJb77cdUZGUrwLtSxuFXNxBMnUuaovDU1mLhVgf8jJX2TxaBJQrfyIzjkts7ifpc7UCt6nI2Us8XC0dQNW3cD9ul5vRfGtIQkeZ5PtT908LfbdnYh9V4SZm35-pjDmAYBf17O1AbJJindbBLEPHKM">
+</div>
+<div class="absolute -bottom-6 -left-6 glass-card p-6 rounded-lg max-w-[200px]">
+<div class="text-secondary text-3xl font-black font-headline">48</div>
+<div class="text-[10px] uppercase tracking-widest text-on-surface-variant">Pages of pure actionable tactical depth</div>
+</div>
+</div>
+</section>
+<section class="border-y border-outline-variant/10 bg-surface-container-low/50 py-16 reveal-on-scroll">
+<div class="max-w-7xl mx-auto px-8">
+<p class="text-center text-[10px] uppercase tracking-[0.3em] text-on-surface-variant/60 mb-12">Trusted by 15+ organizations across 3 continents</p>
+<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-x-12 gap-y-10 items-center opacity-40 grayscale hover:grayscale-0 transition-all duration-700">
+<div class="flex justify-center h-10"><span class="font-headline font-bold text-xl tracking-tighter">MWC</span></div>
+<div class="flex justify-center h-10"><span class="font-headline font-bold text-xl tracking-tighter">READ FOUNDATION</span></div>
+<div class="flex justify-center h-10"><span class="font-headline font-bold text-xl tracking-tighter">AL KHIDMAT</span></div>
+<div class="flex justify-center h-10"><span class="font-headline font-bold text-xl tracking-tighter">ruh</span></div>
+<div class="flex justify-center h-10"><span class="font-headline font-bold text-xl tracking-tighter">LaunchGood</span></div>
+<div class="flex justify-center h-10"><span class="font-headline font-bold text-xl tracking-tighter">SKR</span></div>
+<div class="flex justify-center h-10"><span class="font-headline font-bold text-xl tracking-tighter">KINETIC</span></div>
+<div class="flex justify-center h-10"><span class="font-headline font-bold text-xl tracking-tighter">NEXUS</span></div>
+<div class="flex justify-center h-10"><span class="font-headline font-bold text-xl tracking-tighter">VANTAGE</span></div>
+<div class="flex justify-center h-10"><span class="font-headline font-bold text-xl tracking-tighter">ORBIT</span></div>
+<div class="flex justify-center h-10"><span class="font-headline font-bold text-xl tracking-tighter">NOCTURNE</span></div>
+<div class="flex justify-center h-10"><span class="font-headline font-bold text-xl tracking-tighter">HUMAN CONCERN</span></div>
+</div>
+</div>
+</section>
+<section class="max-w-7xl mx-auto px-8 py-32">
+<div class="mb-20 reveal-on-scroll">
+<span class="text-primary font-label text-sm uppercase tracking-[0.3em] font-bold">The Ecosystem</span>
+<h2 class="font-headline text-4xl lg:text-6xl font-black mt-4 text-on-surface">What's Inside The Box</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="glass-card rounded-lg p-10 reveal-on-scroll" style="transition-delay: 100ms;">
+<div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-8 border border-primary/20 transition-all duration-500">
+<span class="material-symbols-outlined text-3xl">fact_check</span>
+</div>
+<h3 class="text-2xl font-headline font-bold mb-4">The Checklist</h3>
+<p class="text-on-surface-variant leading-relaxed">A 12-point audit to identify exactly where your current acquisition funnel is leaking revenue.</p>
+</div>
+<div class="glass-card rounded-lg p-10 reveal-on-scroll" style="transition-delay: 200ms;">
+<div class="w-16 h-16 rounded-full bg-secondary/10 flex items-center justify-center mb-8 border border-secondary/20 transition-all duration-500">
+<span class="material-symbols-outlined text-3xl">layers</span>
+</div>
+<h3 class="text-2xl font-headline font-bold mb-4">The Templates</h3>
+<p class="text-on-surface-variant leading-relaxed">Plug-and-play landing page structures and email flows designed for 20%+ conversion rates.</p>
+</div>
+<div class="glass-card rounded-lg p-10 reveal-on-scroll" style="transition-delay: 300ms;">
+<div class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-8 border border-primary/20 transition-all duration-500">
+<span class="material-symbols-outlined text-3xl">smart_display</span>
+</div>
+<h3 class="text-2xl font-headline font-bold mb-4">The Training Video</h3>
+<p class="text-on-surface-variant leading-relaxed">A 25-minute breakdown of the methodology that powers our elite client accounts.</p>
+</div>
+</div>
+</section>
+<section class="relative py-32 overflow-hidden reveal-on-scroll">
+<div class="absolute inset-0 flex items-center justify-center opacity-5 pointer-events-none">
+<span class="text-[20vw] font-black font-headline tracking-tighter whitespace-nowrap">PROCESS FIRST</span>
+</div>
+<div class="max-w-4xl mx-auto px-8 text-center relative z-10">
+<h2 class="font-headline text-5xl lg:text-8xl font-black text-on-surface mb-8">Systems Over Luck</h2>
+<p class="text-xl text-on-surface-variant leading-relaxed mb-12">
+                Luck is a luxury for the unprepared. In the nocturnal market of 2024, only the systematic survive. We build frameworks that turn unpredictability into a math problem.
+            </p>
+<div class="flex justify-center">
+<div class="w-px h-24 bg-gradient-to-b from-primary to-transparent"></div>
+</div>
+</div>
+</section>
+<section class="max-w-7xl mx-auto px-8 py-32 reveal-on-scroll">
+<div class="glass-card rounded-lg overflow-hidden flex flex-col md:flex-row">
+<div class="md:w-1/3 h-80 md:h-auto overflow-hidden">
+<img alt="Testimonial Author" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuClt-2P1iaZjoOCRRJrf3hbGh-Xc8qxkKnxhxaZMf2DFaPkXHCkYgjzcaozTEjDZQOnlkWDqhcmAVS5SMLA4z4KO8_r_sAUgpKv0iF_xu-cpnpaGDXIpRt9RFwKW7enojCi_VHJ9daxuPclCLeEzRgWdD1Tjkkr8y-SbAkQQuT5BzBtaw2BDOzuxY1eOUma11WD_T5Cs3JA242efIC1UjWrpWGSlLjvJwFhMqZ_Qk7nut6c5UHhVIO_0frxxa00Svr1JowlZHIhbnY">
+</div>
+<div class="md:w-2/3 p-12 lg:p-20 flex flex-col justify-center">
+<div class="flex space-x-1 mb-8">
+<span class="material-symbols-outlined text-secondary text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-secondary text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-secondary text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-secondary text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-secondary text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<blockquote class="text-2xl lg:text-3xl font-headline font-medium text-on-surface leading-tight mb-8">
+                    "The Process+ playbook didn't just give us tips; it gave us a language for growth that we were missing. We implemented the audit checklist and saw a 34% bump in retention within 14 days."
+                </blockquote>
+<div>
+<cite class="not-italic block font-headline font-bold text-lg text-primary">MARCUS VANCE</cite>
+<span class="text-on-surface-variant text-sm uppercase tracking-widest">Head of Operations, READ Foundation</span>
+</div>
+</div>
+</div>
+</section>
+<section class="max-w-7xl mx-auto px-8 py-40 text-center reveal-on-scroll">
+<div class="glass-card p-16 lg:p-24 rounded-xl relative overflow-hidden border border-white/5">
+<div class="absolute -top-24 -right-24 w-64 h-64 bg-secondary/10 blur-[80px] rounded-full"></div>
+<div class="absolute -bottom-24 -left-24 w-64 h-64 bg-primary/10 blur-[80px] rounded-full"></div>
+<h2 class="font-headline text-4xl lg:text-7xl font-black mb-10 relative z-10">THE FUTURE BELONGS TO <br> THE OPTIMIZED.</h2>
+<div class="flex flex-col items-center space-y-6 relative z-10">
+<button class="magnetic-btn bg-secondary text-on-secondary px-12 py-5 rounded-full font-black uppercase tracking-widest text-lg flex items-center group transition-all duration-300">
+                    Claim Your Free Resource
+                    <span class="ml-4 w-10 h-10 bg-on-secondary/20 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined">auto_awesome</span>
+</span>
+</button>
+<p class="text-on-surface-variant text-sm max-w-sm">
+                    Zero cost. Zero spam. 100% tactical depth. Instant PDF access delivered to your inbox.
+                </p>
+</div>
+</div>
+</section>
+</main>
+<footer class="bg-[#0e0e0e] w-full py-20 px-8 border-t border-white/5 bg-[#131313] relative z-10">
+<div class="flex flex-col md:flex-row justify-between items-center max-w-7xl mx-auto space-y-8 md:space-y-0">
+<div class="text-lg font-bold text-white font-headline flex items-center gap-1">PROCESS<span class="text-primary">+</span></div>
+<div class="flex space-x-8">
+<a class="font-headline text-[10px] uppercase tracking-[0.2em] text-[#F9FFF6]/40 hover:text-white transition-colors" href="#">Privacy Policy</a>
+<a class="font-headline text-[10px] uppercase tracking-[0.2em] text-[#F9FFF6]/40 hover:text-white transition-colors" href="#">Terms of Service</a>
+<a class="font-headline text-[10px] uppercase tracking-[0.2em] text-[#F9FFF6]/40 hover:text-white transition-colors" href="#">Contact</a>
+<a class="font-headline text-[10px] uppercase tracking-[0.2em] text-[#F9FFF6]/40 hover:text-white transition-colors" href="#">Twitter</a>
+<a class="font-headline text-[10px] uppercase tracking-[0.2em] text-[#F9FFF6]/40 hover:text-white transition-colors" href="#">LinkedIn</a>
+</div>
+<div class="font-headline text-[10px] uppercase tracking-[0.2em] text-[#F9FFF6]/50">
+            © 2024 PROCESS PLUS STRATEGY. ALL RIGHTS RESERVED.
+        </div>
+</div>
+</footer>
+<script>
+    const observerOptions = { threshold: 0.1 };
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
+    }, observerOptions);
+    document.querySelectorAll('.reveal-on-scroll').forEach(el => observer.observe(el));
+    document.querySelectorAll('.magnetic-btn').forEach(btn => {
+        btn.addEventListener('mousemove', (e) => {
+            const rect = btn.getBoundingClientRect();
+            const x = e.clientX - rect.left - rect.width / 2;
+            const y = e.clientY - rect.top - rect.height / 2;
+            btn.style.transform = `translate(${x * 0.2}px, ${y * 0.2}px) scale(1.02)`;
+        });
+        btn.addEventListener('mouseleave', () => { btn.style.transform = 'translate(0, 0) scale(1)'; });
+    });
+</script></body></html>
